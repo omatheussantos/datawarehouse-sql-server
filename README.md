@@ -19,16 +19,18 @@ Em necessidades macro, o projeto foi dividido em 04 grandes fases:
 - **Fase 03**: Construção do Datawarehouse.
 - **Fase 04**: Ferramentas de análise de dados.
 
-[INSERIR IMAGEM DAS FASES AQUI]
+![](https://github.com/omatheussantos/datawarehouse-sql-server/blob/main/src/01%20-%20FASES.png)
 
 ### Fase 01: Construção do ambiente OLTP
 
 A fase 01 compreende à modelagem relacional do negócio. O SGBD utilizado foi o SQL Server 2017, versão Enterprise.
 
 **Requisitos**
+
 A Empresa necessita armazenar os seus dados de vendas. O estoque não faz parte do escopo desse projeto, porém, utilizará dos produtos cadastrados nessa modelagem.
 
 **Dos cadastros Gerais**
+
 De forma geral, seguem os requisitos de cadastro abaixo.
 1. Cadastro de Produtos
 2. Cadastro de Fornecedores
@@ -40,22 +42,27 @@ De forma geral, seguem os requisitos de cadastro abaixo.
 8. Cadastro de vendedores (Os vendedores cuidam dos pedidos online, acompanhando os mesmos desde a origem até a entrega, otimizando e solucionando problemas.).
 
 **Dos Campos**
+
 *Todos os cadastros deverão ter números de identificação automáticos e aleatórios*, de forma a deixar a cargo do sistema o controle de identificação de transações.
 
 **Dicionário de Dados**
+
 |  Cadastro Produto |  |
 | ------------ | ------------ |
 | Produto  | Nome do Produto  |
 |   Valor|  Valor de Venda do Produto |
 | Custo Médio  | Custo de Compra do Produto  |
 
+
 |  Cadastro Fornecedor |  |
 | ------------ | ------------ |
 | Nome  | Nome ou Razão Social do Fornecedor  |
 
+
 |  Cadastro Categoria |  |
 | ------------ | ------------ |
 | Nome  | Nome da Categoria do Produto  |
+
 
 |  Cadastro Nota Fiscal |  |
 | ------------ | ------------ |
@@ -64,12 +71,14 @@ De forma geral, seguem os requisitos de cadastro abaixo.
 | Total Item  | Valor Total dos Itens  |
 | Total  | Valor Total da Nota Fiscal  |
 
+
 |  Cadastro Endereço |  |
 | ------------ | ------------ |
 | Rua  | Nome da Rua  |
 | Cidade  | Nome da Cidade  |
 | Estado  | Nome do Estado  |
 | Região  | Região (Norte, Sul, Sudeste, etc)  |
+
 
 |  Cadastro Cliente |  |
 | ------------ | ------------ |
@@ -79,9 +88,11 @@ De forma geral, seguem os requisitos de cadastro abaixo.
 | Sexo  | Sexo do Cliente  |
 | Nascimento  | Data de Nascimento do Cliente  |
 
+
 |  Cadastro Forma de Pagamento |  |
 | ------------ | ------------ |
 | Forma  | Nome da Forma de Pagamento  |
+
 
 |  Cadastro Vendedor |  |
 | ------------ | ------------ |
@@ -90,12 +101,14 @@ De forma geral, seguem os requisitos de cadastro abaixo.
 | Email  | Endereço de Email do Vendedor  |
 
 **Particularidades**
+
 Requisitos levantados pela equipe quanto a detalhes do modelo de negócio. As particularidades são requisitos e são obrigatórios.
 
 1. Nas vendas, uma nota fiscal pode conter um ou mais produtos, diferentes ou do mesmo tipo, contendo um subtotal de produtos do mesmo tipo e um total, com a soma de todos os produtos.
 2. Os funcionários possuem gerentes, que deverão ser armazenados no banco de dados.
 
 **Regras de Negócio Essenciais**
+
 Aqui foram analisadas as regras de negócio junto aos usuários da empresa. Os analistas listaram as principais, e caso surjam duvidas ou outras regras, estas deverão ser informadas para a equipe de analistas para que sejam implementadas no banco de dados.
 
 - Um fornecedor pode fornece vários produtos.
@@ -109,15 +122,24 @@ Aqui foram analisadas as regras de negócio junto aos usuários da empresa. Os a
 **Artefatos - Entregas**
 
 **Modelagem Lógica**
-[INSERIR IMAGEM DA MODELAGEM OLTP]
+
+![](https://github.com/omatheussantos/datawarehouse-sql-server/blob/main/Modelagem/Modelagem%20L%C3%B3gica%20DW.jpg)
 
 **Modelagem Física**
-[SCRIPTS SQL]
+
+> [Scripts SQL](https://github.com/omatheussantos/datawarehouse-sql-server/tree/main/Scripts)
 
 **Constraints**
+
 Abaixo segue o dicionário de constraints criadas no banco COMERCIO_OLTP
-[IMAGEM DA TABELA DE CONSTRAINTS]
-[IMAGEM DAS CONSTRAINTS APLICADAS]
+
+*Tabela de Constraints*
+
+![](https://github.com/omatheussantos/datawarehouse-sql-server/blob/main/src/Constraints.png)
+
+*Constraints Aplicadas*
+
+![](https://github.com/omatheussantos/datawarehouse-sql-server/blob/main/src/Constraints%20Aplicadas.png)
 
 ## Perguntas a serem respondidas pelo Datawarehouse
 
