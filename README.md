@@ -84,6 +84,7 @@ De forma geral, seguem os requisitos de cadastro abaixo.
 | Forma  | Nome da Forma de Pagamento  |
 
 |  Cadastro Vendedor |  |
+| ------------ | ------------ |
 | Nome  | Nome do Vendedor  |
 | Sexo  | Sexo do Vendedor  |
 | Email  | Endereço de Email do Vendedor  |
@@ -130,3 +131,7 @@ Hoje vendemos muito, temos lucro, mas não sei qual categoria, fornecedor ou pro
 - Qual a minha relação com os fornecedores?
 - Qual meu pior e melhor produto?
 - Em qual região eu vendo mais?
+
+### Fase 02: Construção da área de Stage
+### Fase 03: Construção do Datawarehouse
+### Fase 04: Ferramentas de análise de dados
